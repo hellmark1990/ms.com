@@ -18,11 +18,10 @@ AppAsset::register($this);
         <?= Html::csrfMetaTags() ?>
         <title><?= Html::encode($this->title) ?></title>
         <?php $this->head() ?>
-        
     </head>
     <body>
         <?php $this->beginBody() ?>
-         <header class="p0">
+        <header class="p0">
             <div class="container">
                 <div class="row">
                     <div class="span12">
@@ -33,8 +32,8 @@ AppAsset::register($this);
                                         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">MENU</a>                                                   
                                         <div class="nav-collapse nav-collapse_">
                                             <ul class="nav sf-menu">
-                                                <li class="active li-first"><a href="index.html"><em class="hidden-phone"></em><span class="visible-phone">Home</span></a></li>
-                                                <li><a href="index-5.html">contacts</a></li>
+                                                <li class="active li-first"><a href="/"><em class="hidden-phone"></em><span class="visible-phone">Home</span></a></li>
+                                                <li><a href="#">contacts</a></li>
                                             </ul>
                                         </div>
                                         <ul class="social-icons">
@@ -54,19 +53,19 @@ AppAsset::register($this);
 
         <section id="content" class="main-content">
             <div class="container">
-                <div class="row">
-                    
-                </div>        
+                <div class="sub-content">
+                    <?= $content ?>
+                </div>
             </div>
         </section>
-        
+
         <footer>
             <div class="container">
                 <div class="row">
                     <div class="span8 float">
                         <ul class="footer-menu">
-                            <li><a href="index.html" class="current">Home Page</a>|</li>
-                            <li><a href="index-1.html">about</a>|</li>
+                            <li><a href="/" class="current">Home Page</a>|</li>
+                            <li><a href="#">about</a>|</li>
                         </ul>
                     </div>
                 </div>
