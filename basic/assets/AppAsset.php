@@ -18,9 +18,19 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/site.css',
+        'css/bootstrap.css',
+        'css/camera.css',
+        'css/responsive.css',
+        'css/style.css',
     ];
     public $js = [
+        'js/camera.js',
+        'js/jquery.easing.1.3.js',
+        'js/jquery.js',
+        'js/jquery.mobile.customized.min.js',
+        'js/jquery.ui.totop.js',
+        'js/superfish.js',
+        'js/bootstrap.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
