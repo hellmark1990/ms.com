@@ -1,0 +1,6 @@
+Options +FollowSymLinks
+Options -Indexes
+RewriteEngine on
+
+# if request dosn't start with web add it
+RewriteRule ^(.*)$ index.php?tag=%1 [L]
