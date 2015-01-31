@@ -1,8 +1,6 @@
 <?php
+
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 
 /* @var $this \yii\web\View */
@@ -13,57 +11,68 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-    <?php $this->head() ?>
-</head>
-<body>
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+        <?= Html::csrfMetaTags() ?>
+        <title><?= Html::encode($this->title) ?></title>
+        <?php $this->head() ?>
+    </head>
+    <body>
+        <?php $this->beginBody() ?>
+        <header class="p0">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <div class="header-block clearfix">
+                            <div class="navbar navbar_ clearfix">
+                                <div class="navbar-inner navbar-inner_">
+                                    <div class="container">
+                                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse_">MENU</a>                                                   
+                                        <div class="nav-collapse nav-collapse_">
+                                            <ul class="nav sf-menu">
+                                                <li class="active li-first"><a href="/"><em class="hidden-phone"></em><span class="visible-phone">Home</span></a></li>
+                                                <li><a href="#">contacts</a></li>
+                                            </ul>
+                                        </div>
+                                        <ul class="social-icons">
+                                            <li><a href="#"><img src="img/icon-1.png" alt=""></a></li>
+                                            <li><a href="#"><img src="img/icon-2.png" alt=""></a></li>
+                                            <li><a href="#"><img src="img/icon-3.png" alt=""></a></li>
+                                            <li><a href="#"><img src="img/icon-4.png" alt=""></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>
+                </div>   
+            </div>
+        </header>
 
-<?php $this->beginBody() ?>
-    <div class="wrap">
-        <?php
-            NavBar::begin([
-                'brandLabel' => 'My Company',
-                'brandUrl' => Yii::$app->homeUrl,
-                'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
-                ],
-            ]);
-            echo Nav::widget([
-                'options' => ['class' => 'navbar-nav navbar-right'],
-                'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                            'url' => ['/site/logout'],
-                            'linkOptions' => ['data-method' => 'post']],
-                ],
-            ]);
-            NavBar::end();
-        ?>
+        <section id="content" class="main-content">
+            <div class="container">
+                <div class="sub-content">
+                    <?= $content ?>
+                </div>
+            </div>
+        </section>
 
-        <div class="container">
-            <?= Breadcrumbs::widget([
-                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-            ]) ?>
-            <?= $content ?>
-        </div>
-    </div>
-
-    <footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-            <p class="pull-right"><?= Yii::powered() ?></p>
-        </div>
-    </footer>
-
-<?php $this->endBody() ?>
-</body>
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="span8 float">
+                        <ul class="footer-menu">
+                            <li><a href="/" class="current">Home Page</a>|</li>
+                            <li><a href="#">about</a>|</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <?php $this->endBody() ?>
+        <?php $this->endBody() ?>        
+    </body>    
 </html>
 <?php $this->endPage() ?>
